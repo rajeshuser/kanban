@@ -1,0 +1,106 @@
+###
+GET http://localhost:5000
+
+###
+GET http://localhost:5000/users
+
+###
+POST http://localhost:5000/users/signup
+Content-Type: application/json
+
+{
+	"email": "abc@gmail.com",
+	"password": "abc"
+}
+
+###
+POST http://localhost:5000/users/signin
+Content-Type: application/json
+
+{
+	"email": "abc@gmail.com",
+	"password": "abc"
+}
+
+###
+GET http://localhost:5000/boards
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+GET http://localhost:5000/boards/64634c4d0fd113fb0d620602
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+GET http://localhost:5000/boards/tasks
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+GET http://localhost:5000/boards/tasks/64634177a845f74c7c81acd3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+DELETE http://localhost:5000/boards/tasks/64634177a845f74c7c81acd3
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+PATCH http://localhost:5000/boards/tasks/64634177a845f74c7c81acd3
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+{
+	"status": "Done"
+}
+
+###
+GET http://localhost:5000/boards/tasks/subtasks/64634176a845f74c7c81accf
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+###
+PATCH http://localhost:5000/boards/tasks/subtasks/64634176a845f74c7c81accf
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+{
+	"isCompleted": true
+}
+
+###
+POST http://localhost:5000/boards
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDYzNGM5ZjBmZDExM2ZiMGQ2MjA2MTAiLCJpYXQiOjE2ODQyMjkzOTV9.ivt3U1WT-PfgAS6hMAk30W6T0PZVhGmD0FZi4FEjXnY
+
+{
+	"name": "Todo",
+	"tasks": [
+		{
+			"title": "Build UI for onboarding flow",
+			"description": "",
+			"status": "Todo",
+			"subtasks": [
+				{
+					"title": "Sign up page",
+					"isCompleted": true
+				},
+				{
+					"title": "Sign in page",
+					"isCompleted": false
+				},
+				{
+					"title": "Welcome page",
+					"isCompleted": false
+				}
+			]
+		},
+		{
+			"title": "Build UI for search",
+			"description": "",
+			"status": "Todo",
+			"subtasks": [
+				{
+					"title": "Search page",
+					"isCompleted": false
+				}
+			]
+		}
+	]
+}
